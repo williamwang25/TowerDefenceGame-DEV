@@ -1,9 +1,8 @@
-//敌人类型枚举
-
+//敌人类型
 #ifndef _ENEMY_TYPE_H_
 #define _ENEMY_TYPE_H_
 
-enum class EnemyType
+enum class EnemyType//敌人类型枚举
 {
 	Slim,
 	KingSlim,

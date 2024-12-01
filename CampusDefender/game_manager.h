@@ -1,12 +1,12 @@
 //游戏运行管理器
-
 #ifndef _GAME_MANAGER_H_
 #define _GAME_MANAGER_H_
-
 
 #include"manager.h"
 #include"config_manager.h"
 #include"resources_manager.h"
+#include"enemy_manager.h"
+#include"wave_manager.h"
 
 #include<SDL.h>
 #include<SDL_ttf.h>
@@ -37,7 +37,6 @@ public:
 					is_quit = true;
 				}
 				on_input();//处理输入
-
 
 			}
 			//60帧显示
@@ -136,7 +135,13 @@ private:
 	//更新数据
 	void on_update(double delta)
 	{
+		static ConfigManager* instance = ConfigManager::instance();
 
+		if (!instance->is_game_over)
+		{
+			WaveManager::instance()->on_update(delta);
+			EnemyManager::instance()->on_update(delta);
+		}
 	}
 
 	//渲染图像
@@ -145,6 +150,8 @@ private:
 		static ConfigManager* instance = ConfigManager::instance();
 		static SDL_Rect& rect_dst = instance->rect_tile_map;
 		SDL_RenderCopy(renderer, tex_tile_map, nullptr, &rect_dst);
+
+		EnemyManager::instance()->on_render(renderer);
 	}
 
 	//生成地图纹理

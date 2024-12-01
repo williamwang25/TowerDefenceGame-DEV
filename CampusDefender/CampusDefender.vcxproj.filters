@@ -22,6 +22,9 @@
     <Filter Include="头文件\enemy">
       <UniqueIdentifier>{0047a9d1-cdf4-43f4-8fa5-29b8ce5312ae}</UniqueIdentifier>
     </Filter>
+    <Filter Include="头文件\map">
+      <UniqueIdentifier>{cc519913-11f1-46a6-81c3-7bc759c851a3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -32,23 +35,11 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="map.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="tile.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="game_manager.h">
       <Filter>头文件\managers</Filter>
     </ClInclude>
     <ClInclude Include="manager.h">
       <Filter>头文件\managers</Filter>
-    </ClInclude>
-    <ClInclude Include="route.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="wave.h">
-      <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="config_manager.h">
       <Filter>头文件\managers</Filter>
@@ -58,6 +49,45 @@
     </ClInclude>
     <ClInclude Include="resources_manager.h">
       <Filter>头文件\managers</Filter>
+    </ClInclude>
+    <ClInclude Include="map.h">
+      <Filter>头文件\map</Filter>
+    </ClInclude>
+    <ClInclude Include="route.h">
+      <Filter>头文件\map</Filter>
+    </ClInclude>
+    <ClInclude Include="tile.h">
+      <Filter>头文件\map</Filter>
+    </ClInclude>
+    <ClInclude Include="wave.h">
+      <Filter>头文件\map</Filter>
+    </ClInclude>
+    <ClInclude Include="timer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="animation.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="vector2.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="enemy.h">
+      <Filter>头文件\enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="enemy_manager.h">
+      <Filter>头文件\managers</Filter>
+    </ClInclude>
+    <ClInclude Include="home_manager.h">
+      <Filter>头文件\managers</Filter>
+    </ClInclude>
+    <ClInclude Include="wave_manager.h">
+      <Filter>头文件\managers</Filter>
+    </ClInclude>
+    <ClInclude Include="coin_manager.h">
+      <Filter>头文件\managers</Filter>
+    </ClInclude>
+    <ClInclude Include="enemies.h">
+      <Filter>头文件\enemy</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
