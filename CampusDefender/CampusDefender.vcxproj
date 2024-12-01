@@ -132,16 +132,22 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\Libraries\cJSON\cJSON.c" />
+    <ClCompile Include="bullets.h" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="animation.h" />
+    <ClInclude Include="bullet.h" />
+    <ClInclude Include="bullet_manager.h" />
+    <ClInclude Include="bullet_type.h" />
     <ClInclude Include="coin_manager.h" />
+    <ClInclude Include="coin_prop.h" />
     <ClInclude Include="config_manager.h" />
     <ClInclude Include="enemies.h" />
     <ClInclude Include="enemy.h" />
     <ClInclude Include="enemy_manager.h" />
     <ClInclude Include="enemy_type.h" />
+    <ClInclude Include="facing.h" />
     <ClInclude Include="game_manager.h" />
     <ClInclude Include="home_manager.h" />
     <ClInclude Include="manager.h" />
@@ -150,6 +156,10 @@
     <ClInclude Include="route.h" />
     <ClInclude Include="tile.h" />
     <ClInclude Include="timer.h" />
+    <ClInclude Include="tower.h" />
+    <ClInclude Include="towers.h" />
+    <ClInclude Include="tower_manager.h" />
+    <ClInclude Include="tower_type.h" />
     <ClInclude Include="vector2.h" />
     <ClInclude Include="wave.h" />
     <ClInclude Include="wave_manager.h" />

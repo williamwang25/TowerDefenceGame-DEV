@@ -11,9 +11,7 @@
 #include"animation.h"
 #include"config_manager.h"
 
-
 #include<functional>
-
 
 class Enemy
 {
@@ -27,7 +25,7 @@ public:
 		timer_skill.set_on_timeout([&]() {on_skill_released(this); });
 
 		timer_sketch.set_one_shot(true);
-		//受击效果（闪烁）持续时间 0.075
+		//受击闪烁效果
 		timer_sketch.set_wait_time(0.075);
 		timer_sketch.set_on_timeout([&]() {is_show_sketch = false; });
 
@@ -154,6 +152,10 @@ public:
 			hp = 0;
 			is_alive = false;
 		}
+
+		//显示受击效果
+		is_show_sketch = true;
+		timer_sketch.restart();
 	}
 
 	//受击减速
@@ -292,7 +294,7 @@ private:
 	int idx_target = 0;
 
 	Vector2 position_target;
-
+		
 private:
 	//函数封装
 	//更新目标点位置

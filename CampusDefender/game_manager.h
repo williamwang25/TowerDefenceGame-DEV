@@ -7,6 +7,8 @@
 #include"resources_manager.h"
 #include"enemy_manager.h"
 #include"wave_manager.h"
+#include"tower_manager.h"
+#include"bullet_manager.h"
 
 #include<SDL.h>
 #include<SDL_ttf.h>
@@ -23,6 +25,12 @@ public:
 	//游戏运行主函数
 	int run(int argc, char** argv)
 	{
+		///Debug
+		//放置防御塔
+		TowerManager::instance()->place_tower(TowerType::Archer, { 5,0 });
+
+
+
 		//高精度计时器
 		Uint64 last_counter = SDL_GetPerformanceCounter(); //高性能计数
 		const Uint64 counter_freq = SDL_GetPerformanceFrequency(); //频率
@@ -139,8 +147,12 @@ private:
 
 		if (!instance->is_game_over)
 		{
+			//更新管理器
 			WaveManager::instance()->on_update(delta);
 			EnemyManager::instance()->on_update(delta);
+			TowerManager::instance()->on_update(delta);
+			BulletManager::instance()->on_update(delta);
+
 		}
 	}
 
@@ -151,7 +163,10 @@ private:
 		static SDL_Rect& rect_dst = instance->rect_tile_map;
 		SDL_RenderCopy(renderer, tex_tile_map, nullptr, &rect_dst);
 
+		//渲染管理器内容
 		EnemyManager::instance()->on_render(renderer);
+		BulletManager::instance()->on_render(renderer);
+		TowerManager::instance()->on_render(renderer);
 	}
 
 	//生成地图纹理
